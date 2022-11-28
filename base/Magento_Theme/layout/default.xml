@@ -1,6 +1,16 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="header.container">
+            <container name="free.shipping.container" htmlTag="div" before="-">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="free.shipping.block"
+                       template="Magento_Theme::FreeShippingBanner.phtml"
+                       ifconfig="carriers/freeshipping/active"
+                       before="-">
+                </block>
+            </container>
+        </referenceContainer>
         <move element="form.subscribe" destination="page.bottom.container" before="-"/>
     </body>
 </page>
